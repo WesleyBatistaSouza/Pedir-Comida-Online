@@ -25,23 +25,41 @@ const navSlide = () => {
 window.onload = () => navSlide();
 
 
-/*
+// slide
 
-// localização do usuário em tempo real
+const slider = document.querySelectorAll('.slider');
+const btnPrev = document.getElementById('prev-button');
+const btnNext = document.getElementById('next-button');
 
-let local = document.querySelector('#local');
+let currentSlide = 0;
 
-function success(pos){
-  console.log(pos.coords.latitude, pos.coords.longitude);
-  local.textContent = 'Latitude: ${pos.coords.latitude}';
+function hideSlider() {
+  slider.forEach(item => item.classList.remove('on'))
 }
 
-function error(err) {
-  console.log(err);
+function showSlider() {
+  slider[currentSlide].classList.add('on')
 }
 
-var watchID = navigator.geolocation.watchPosition(success, error, {
-  enableHighAccuracy: true,
-  timeout: 5000
-});
-*/
+function nextSlider() {
+  hideSlider()
+  if (currentSlide === slider.length - 1) {
+    currentSlide = 0
+  } else {
+    currentSlide++
+  }
+  showSlider()
+}
+
+function prevSlider() {
+  hideSlider()
+  if (currentSlide === 0) {
+    currentSlide = slider.length - 1
+  } else {
+    currentSlide--
+  }
+  showSlider()
+}
+
+btnNext.addEventListener('click', nextSlider)
+btnPrev.addEventListener('click', prevSlider)
