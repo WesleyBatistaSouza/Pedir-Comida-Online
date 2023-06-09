@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+h1 {
+  text-align: center;
+  color: #F7860D;
+  font-size: 32px;
+}

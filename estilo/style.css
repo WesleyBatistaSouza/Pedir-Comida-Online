@@ -1,0 +1,439 @@
+@charset "UTF-8";
+
+/* configuração do menu e busca */
+
+.pedido-menu{
+  position: fixed;
+  background: mediumpurple;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* configuração da barra de pesquisa */
+
+.buscar-pedido {
+  font-size: 1rem;
+  height: 40px;
+  padding: 10px;
+  margin: 10px;
+  outline: 0;
+  box-shadow: 2px 2px 5px #0E0E0E;
+  border: none;
+  background: #FF7E20;
+  border-radius: 25px;
+  width: 100%;
+  cursor: text;
+}
+input::placeholder {
+  color: #fff;
+  font-size: 1rem;
+  }
+  
+.search{
+  padding: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  filter: invert(1);
+}
+
+/* configuração do menu */
+.nav-bar {
+	list-style:none;
+	position: relative;
+	top: 16px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a.nav-link{
+	margin: 5px;
+	padding: 5px 10px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.active{
+	background: #FF7E20;
+}
+
+.nav-link:hover {
+	color: #000000;
+    background: #FF7E20;
+}
+
+
+/* hamburguer  */
+
+
+.hamburguer {
+    display: none;
+}
+
+ .line1, .line2, .line3  {
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  transition: all 0.3s ease-in-out
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translatex(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translatex(0px);
+  }
+}
+
+
+
+/* logo do estabelecimento */
+.principal {
+  background-image: linear-gradient(#7549F1, #7743A8, #C872FF);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+   .endereco {
+  display: inline-flex;
+  text-align: center;
+  margin-top: 200px;
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1.2);
+  cursor: pointer;
+   }
+   
+   .endereco a {
+     display: inline-flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+   }
+   
+    .endereco-text {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #F7860D;
+  text-align: center;
+   }
+   
+
+.endereco img {
+  margin: 3px;
+  width: 30px;
+  height: 30px;
+}
+
+   .estabelecimento {
+    font-family: 'Iceland', cursive;
+    font-size: 6rem;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .descricao {
+    margin: 10px;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Actor', sans-serif;
+    text-align: center;
+    color: #fff;
+  }
+  
+  
+/* configuraçao dos botões */
+   .botao {
+    padding: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+  }
+  
+  .botao .cardapio {
+    padding: 20px;
+    font-size: 2rem;
+    border: transparent;
+    background: #FF7E20;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .botao .pedidos {
+    width: 100%;
+    padding: 20px;
+    font-size: 2rem;
+    border: transparent;
+    background: #145CD0;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .botao button:hover{
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+  }
+  
+  /*  configurando os mais pedidos  */
+
+  .texto-pedidos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: red;
+    text-align: center;
+    height: 130px;
+      color: #fff;
+    font-family: 'Iceland', cursive;
+    font-size: 4rem;
+  }
+  
+  
+  /* slider */
+  
+  
+  
+.container-slider {
+  display: flex;
+  width: 100%;
+  min-height: 40vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: linear-gradient(#7549F1, #7743A8, #C872FF);
+}
+
+.container-images {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.slider {
+  opacity: 0;
+  transition: opacity .2s;
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3 ease-in-out
+}
+
+.on {
+  opacity: 1;
+}
+
+#next-button, #prev-button {
+  width: 100px;
+  height: 100px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+#prev-button img,
+#next-button img {
+  width: 100%;
+  height: 100%;
+}
+
+#prev-button {
+  transform: rotate(180deg);
+}
+
+  
+/* seção de almoço */
+
+.almoco, .doces {
+  background-image: linear-gradient(#7549F1, #7743A8, #C872FF);
+   color: #fff;
+   
+}
+
+ .secao-almoco {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+ }
+ 
+
+ 
+  .img-comida01 {
+  width: 100%;
+  padding-top: 35px; 
+ }
+
+.texto-comida01, .texto-comida02 {
+  text-align: center;
+  font-family: 'Actor', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  padding: 20px;
+}
+
+ .img-comida02 {
+ margin-top: 10px;
+}
+
+
+/* seção de doces */
+
+ .secao-doces {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   padding: 15px;
+ }
+ 
+ .img-sorvete01 {
+ margin-top: 10px;
+ }
+
+.texto-sorvete01 {
+    text-align: center;
+  font-family: 'Actor', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 20px;
+}
+
+ .img-sorvete02 {
+ margin-top: 10px;
+}
+
+.texto-sorvete02 {
+  text-align: center;
+  font-family: 'Actor', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+
+.img-sorvete01:hover, .img-sorvete02:hover, .img-comida01:hover, .img-comida02:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}
+
+/*configuração do footer*/
+
+.rodape {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-evenly;
+  align-items: center;
+  background: #171616;
+}
+
+.fale-conosco {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  padding: 15px;
+  margin: 10px; 
+}
+
+
+.contato {
+  align-items: initial;
+  border-top: 1px solid #ccc;
+}
+
+.contato p {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.contatos {
+text-align: center;
+font-size: 1.9rem;
+color: #fff;
+font-weight: 400;
+}
+
+.siga-nos {
+  margin: 11px;
+  padding: 0px;
+  border-top: 1px solid #ccc;
+  color: #fff;
+}
+
+.siga-nos p {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.fala-comigo {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.my-redes {
+  min-height: auto;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid #cecece;
+}
+
+.my-redes img:hover {
+  transition: transform 0.3s ease-in;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.my-redes img{
+  filter: invert(1);
+  margin: 10px;
+  width: 38px;
+}
+
+.direitos {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 15px;
+}
